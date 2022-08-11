@@ -1,7 +1,7 @@
 # Testes API - EBAC
 ### Exercício para os alunos de Qualidade de software da EBAC 
 
-## Clonando e executando em sua máquina
+## Clonado e executado em minha máquina - testes de API Usuários 
 
 ### Pré-requisito:
 

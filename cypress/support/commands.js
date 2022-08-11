@@ -51,3 +51,31 @@ Cypress.Commands.add('token', (email, senha) => {
           failOnStatusCode: false
     })
  })
+ Cypress.Commands.add('cadastrarUsuarios' , (token, usuario, email, senha, administrador) =>{
+    cy.request({
+        method: 'POST',
+        url: 'usuarios',
+        headers: {authorization: token},
+        body: {
+            "nome": usuario,
+            "email": email,
+            "password": senha,
+            "administrador": administrador
+        },
+        failOnStatusCode: false
+    })
+ })
+ Cypress.Commands.add('loginInvalido' , (email, senha) => {
+    cy.request({
+        method: 'POST',
+        url: 'login',
+        body:{
+            "email": email,
+            "password": senha 
+        },
+        failOnStatusCode: false
+    }).then((response) =>{
+        return response.body.authorization
+     })
+
+ })
