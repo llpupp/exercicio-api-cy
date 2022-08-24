@@ -4,10 +4,10 @@ import contrato from '../contracts/usuarios.contract'
 describe('Testes da Funcionalidade Usuários', () => {
      let token
      before(() => {
-          cy.token('llp_qa@ebac.com.br', 'teste').then(tkn => { token = tkn })
+          cy.token('reginapupp_qa@ebac.com.br', 'teste').then(tkn => { token = tkn })
      });
 
-     it.only('Deve validar contrato de usuários', () => {
+     it('Deve validar contrato de usuários', () => {
           cy.request('usuarios').then(response => {
                return contrato.validateAsync(response.body)
           })
@@ -67,9 +67,9 @@ describe('Testes da Funcionalidade Usuários', () => {
                     url: `usuarios/${id}`,
                     headers: {authorization: token},
                     body:{
-                         "nome": "Regina Pupp",
-                         "email": "reginapupp_qa@ebac.com.br",
-                         "password": "teste",
+                         "nome": "usuario88015",
+                         "email": "usuario88015@qa.com.br",
+                         "password": "teste 65365",
                          "administrador": "true"
                        }
                }).then(response => {

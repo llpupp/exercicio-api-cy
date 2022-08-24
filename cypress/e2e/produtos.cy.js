@@ -4,7 +4,7 @@ import contrato from '../contracts/produtos.contract'
 describe('Testes da Funcionalidade Produtos', () => {
     let token
     before(() => {
-        cy.token('llp_qa@ebac.com.br', 'teste').then(tkn => { token = tkn })
+        cy.token('usuario50918@qa.com.br', 'teste').then(tkn => { token = tkn })
     });
 
     it('Deve validar contrato de produtos', () => {
@@ -51,7 +51,7 @@ describe('Testes da Funcionalidade Produtos', () => {
             })
     });
 
-    it.only('Deve editar um produto já cadastrado', () => {
+    it('Deve editar um produto já cadastrado', () => {
         cy.request('produtos').then(response => {
             let id = response.body.produtos[0]._id
             cy.request({
